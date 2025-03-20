@@ -4,6 +4,10 @@ from transformers import pipeline
 app = Flask(__name__)
 generator = pipeline("text-generation", model="gpt2")
 
+@app.route("/")
+def home():
+    return "Hello World!"
+
 @app.route("/generate", methods=["POST"])
 def generate():
     data = request.json
