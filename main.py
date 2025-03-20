@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 from transformers import pipeline
 
 app = Flask(__name__)
-generator = pipeline("text-generation", model="gpt2")
+generator = pipeline("text-generation", model="rinna/japanese-gpt-1b")
 
 @app.route("/")
 def home():
